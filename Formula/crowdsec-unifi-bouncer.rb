@@ -23,7 +23,7 @@ class CrowdsecUnifiBouncer < Formula
     # Config examples
     (etc/"crowdsec-unifi-bouncer").install "crowdsec-firewall-bouncer.yaml.example"
 
-    # Systemd service files (for reference)
+    # Systemd service files
     (share/"crowdsec-unifi-bouncer").install "crowdsec-firewall-bouncer.service"
     (share/"crowdsec-unifi-bouncer").install "crowdsec-unifi-metrics.service"
 
