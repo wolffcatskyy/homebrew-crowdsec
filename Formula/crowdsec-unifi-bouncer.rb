@@ -1,8 +1,8 @@
 class CrowdsecUnifiBouncer < Formula
   desc "CrowdSec bouncer for UniFi Dream Machine (UDM/UDR) using native nftables"
   homepage "https://github.com/wolffcatskyy/crowdsec-unifi-bouncer"
-  url "https://github.com/wolffcatskyy/crowdsec-unifi-bouncer/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "e12752c6271c55908355396a2608ce5de1358f78a444ea4b23a873026076044f"
+  url "https://github.com/wolffcatskyy/crowdsec-unifi-bouncer/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "1885c69909623bf57e1de30429dbb545280d74670f0896d0def2717e9374a042"
   license "MIT"
 
   depends_on "bash"

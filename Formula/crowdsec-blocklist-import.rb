@@ -3,8 +3,8 @@ class CrowdsecBlocklistImport < Formula
 
   desc "Memory-efficient importer for 28+ public threat feeds into CrowdSec via LAPI"
   homepage "https://github.com/wolffcatskyy/crowdsec-blocklist-import"
-  url "https://github.com/wolffcatskyy/crowdsec-blocklist-import/archive/refs/tags/v3.6.0.tar.gz"
-  sha256 "cfece1cbeb93158a3c2316b494a3e372c17726aa2bd8f2339390dcea97f10149"
+  url "https://github.com/wolffcatskyy/crowdsec-blocklist-import/archive/refs/tags/v3.7.1.tar.gz"
+  sha256 "53bdf74a15ab26940af64be27aac41167a4dbd4c3f52c8dfaeb910fb2ec057c4"
   license "MIT"
 
   depends_on "python@3.12"
