@@ -1,8 +1,8 @@
 class CrowdsecUnifiBouncer < Formula
   desc "CrowdSec bouncer for UniFi Dream Machine (UDM/UDR) using native nftables"
   homepage "https://github.com/wolffcatskyy/crowdsec-unifi-bouncer"
-  url "https://github.com/wolffcatskyy/crowdsec-unifi-bouncer/archive/refs/tags/v2.5.2.tar.gz"
-  sha256 "497f3144ea1568febf36c7ca7e4815f251ce35ff56261012159c418355b6cfe4"
+  url "https://github.com/wolffcatskyy/crowdsec-unifi-bouncer/archive/refs/tags/v2.5.4.tar.gz"
+  sha256 "01c4875a1b8fe514799b849e5262e1dfc67d1852f970ca69763b96a072d5edcf"
   license "MIT"
 
   depends_on "bash"
@@ -14,6 +14,7 @@ class CrowdsecUnifiBouncer < Formula
     bin.install "setup.sh" => "crowdsec-unifi-bouncer-setup"
     bin.install "install.sh" => "crowdsec-unifi-bouncer-install"
     bin.install "bootstrap.sh" => "crowdsec-unifi-bouncer-bootstrap"
+    bin.install "boot-restore.sh" => "crowdsec-unifi-bouncer-boot-restore"
     bin.install "ensure-rules.sh" => "crowdsec-unifi-bouncer-ensure-rules"
     bin.install "detect-device.sh" => "crowdsec-unifi-bouncer-detect-device"
     bin.install "detect-sidecar.sh" => "crowdsec-unifi-bouncer-detect-sidecar"
@@ -48,6 +49,8 @@ class CrowdsecUnifiBouncer < Formula
   end
 
   test do
-    assert_match "detect", shell_output("#{bin}/crowdsec-unifi-bouncer-detect-device 2>&1", 1)
+    # Use the modern Bash dependency: the detector needs associative arrays.
+    output = shell_output("#{Formula["bash"].opt_bin}/bash #{bin}/crowdsec-unifi-bouncer-detect-device 2>&1", 0)
+    assert_match "CrowdSec UniFi Bouncer - Device Detection", output
   end
-end
+  end
